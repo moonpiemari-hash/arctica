@@ -5,11 +5,10 @@
   <title>Арктика — Белый медведь</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body { margin: 0; overflow: hidden; }
+    body { margin: 0; overflow: hidden; background: #f0f0f0; }
     model-viewer {
       width: 100vw;
       height: 100vh;
-      background-color: #fff;
     }
   </style>
 </head>
@@ -20,11 +19,15 @@
     ar-modes="webxr scene-viewer quick-look"
     camera-controls
     shadow-intensity="1"
+    scale="5 5 5"
+    animation-name="*"
+    animation-delay="0"
+    animation-repetitions="infinite"
     alt="Белый медведь"
     style="display: block;">
   </model-viewer>
 
-  <!-- Явная кнопка AR -->
+  <!-- Кнопка AR -->
   <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
     <button onclick="document.querySelector('model-viewer').activateAR()" 
             style="padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 5px; font-size: 16px;">
