@@ -2,38 +2,44 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Арктика — Белый медведь</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>Полярное сияние — Арктика</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #e0e0e0;
+    * { margin: 0; padding: 0; overflow: hidden; }
+    body, html {
+      background: #000;
+      height: 100%;
     }
-    model-viewer {
-      width: 100vw;
-      height: 100vh;
-      --poster-color: #ffffff;
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%; /* увеличено для эффекта "неба" */
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-shadow: 0 0 10px #000;
+      padding: 0 20px;
     }
   </style>
 </head>
 <body>
-  <model-viewer
-    src="polar_bear%20(1).glb"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    camera-controls
-    shadow-intensity="1"
-    alt="Белый медведь"
-    style="display: block;">
-  </model-viewer>
-
-  <!-- Кнопка AR -->
-  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-    <button onclick="document.querySelector('model-viewer').activateAR()"
-            style="padding: 12px 24px; background: #007AFF; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-      🕶️ Включить AR
-    </button>
+  <video autoplay muted loop playsinline>
+    <source src="aurora.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+  <div class="overlay">
+    Полярное сияние — одно из чудес Арктики<br>
+    «Арктика. Сердце России»
   </div>
 </body>
-</html> 
+</html>
